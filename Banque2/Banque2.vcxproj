@@ -142,14 +142,20 @@
     <ClCompile Include="Banque2.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Compte.cpp" />
+    <ClCompile Include="CompteCourant.cpp" />
+    <ClCompile Include="CompteEpargne.cpp" />
     <ClCompile Include="GC.cpp" />
     <ClCompile Include="Mad.cpp" />
+    <ClCompile Include="Operation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="Compte.h" />
+    <ClInclude Include="CompteCourant.h" />
+    <ClInclude Include="CompteEpargne.h" />
     <ClInclude Include="GC.h" />
     <ClInclude Include="Mad.h" />
+    <ClInclude Include="Operation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

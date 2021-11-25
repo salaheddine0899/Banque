@@ -30,6 +30,15 @@
     <ClCompile Include="GC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CompteEpargne.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompteCourant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Operation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Compte.h">
@@ -42,6 +51,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompteEpargne.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompteCourant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

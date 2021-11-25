@@ -13,5 +13,6 @@ namespace Banque {
 		Mad& operator-(const Mad&);
 		bool operator<=(const Mad&);
 		bool operator>=(const Mad&);
+		Mad& operator*(const double&);
 	};
 }

@@ -5,6 +5,7 @@ namespace Banque {
 	Mad* Compte::Plafond = new Mad(25000);
 	Compte::Compte(Client* titulaire, Mad* Solde) :numCompte(++Compte::nbCompte)
 	{
+		this->lop = new list<Operation>();
 		this->Proprietaire = titulaire;
 		this->Solde = Solde;
 		this->comptRef = new GC(1);
@@ -21,18 +22,11 @@ namespace Banque {
 	}
 
 	void Compte::crediter(Mad& M) {
+		//Operation* op = new Operation(true);
 		*(this->Solde) = *(this->Solde) + M;
+		this->lop->push_back(*(new Operation(true,&M)));
 	}
 
-	bool Compte::debiter(Mad& M)
-	{
-		if ((*(this->Solde) >= M) && (*(this->Solde) <= *Compte::Plafond)) {
-
-			*(this->Solde) = *(this->Solde) - M;
-			return true;
-		}
-		return false;
-	}
 	bool Compte::verser(Mad& M, Compte& C)
 	{
 		if (this->debiter(M)) {
@@ -47,6 +41,26 @@ namespace Banque {
 		this->Proprietaire->afficher();
 		this->Solde->afficher();
 	}
+	void Compte::afficherOp() const
+	{
+		for (auto i : *this->lop)
+			i.display();
+	}
+	Compte& Compte::operator=(const Compte&c)
+	{
+		if (this != &c) {
+			if (this->Proprietaire && this->comptRef && (!this->comptRef->dec())) {
+				delete this->comptRef;
+				this->comptRef = NULL;
+			}
+			this->Solde = c.Solde;
+			this->Proprietaire = c.Proprietaire;
+			this->comptRef = c.comptRef;
+			this->comptRef->inc();
+		}
+		return *this;
+		// TODO: insert return statement here
+	}
 	Compte::~Compte()
 	{
 		if ((this->comptRef->dec() != 0) && (this->Proprietaire)) {
@@ -56,5 +70,7 @@ namespace Banque {
 		{
 			delete this->Proprietaire;
 		}
+		this->lop->~list();
+		delete this->lop;
 	}
 }

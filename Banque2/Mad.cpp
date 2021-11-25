@@ -33,4 +33,11 @@ namespace Banque {
 	{
 		return this->val >= M.val;
 	}
+	Mad& Mad::operator*(const double&val)
+	{
+		// TODO: insert return statement here
+		Mad *res=new Mad(this->val*val);
+		return *res;
+
+	}
 }

@@ -9,6 +9,7 @@ using namespace Banque;
 int main(){
 
     Client* cl1 = new Client("ABID", "Salah Eddine", "Everywhere");
+    Client* cl2 = new Client("ABID", "Aomar", "Everywhere");
     Mad* s1 = new Mad(20000);
     //s1->afficher();
     Compte cpt1(cl1, s1);
@@ -19,8 +20,17 @@ int main(){
 
     cpt1.verser(*s3, cpt2);
 
+    cpt2.verser(*s3, cpt1);
+
+    cpt1.afficherOp();
+
     cpt1.consulter();
     cpt2.consulter();
+    /*cl1->ajouter_compte(cpt1);*/
+    /*cl1->ajouter_compte(cpt1);
+    cl1->ajouter_compte(cpt2);
+
+    cl1->afficher_compte();*/
 
     Compte cpt4(cpt1);
 
