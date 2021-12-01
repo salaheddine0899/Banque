@@ -1,8 +1,10 @@
 #include "CompteEpargne.h"
+#include<assert.h>
 
 namespace Banque {
-	CompteEpargne::CompteEpargne(Client* c, Mad* s, double ti):Compte(c,s)
+	CompteEpargne::CompteEpargne(Client* c, Devise* s, double ti):Compte(c,s)
 	{
+		assert(ti >= 0 && ti <= 100);
 		try {
 			if (ti < 0 || ti>100) throw "vous devez saisir un taux valid";
 			this->tauxInteret = ti;
@@ -11,12 +13,12 @@ namespace Banque {
 			cout << e << endl;
 		}
 	}
-	bool CompteEpargne::debiter(Mad& M)
+	bool CompteEpargne::debiter(Devise& M)
 	{
 		if ((*(this->Solde) >= M)) {
 
 			*(this->Solde) = *(this->Solde) - M;
-			this->lop->push_back(*(new Operation(false, &M)));
+			this->lop->push_back(new Retrait(&M,this));
 			return true;
 		}
 		return false;

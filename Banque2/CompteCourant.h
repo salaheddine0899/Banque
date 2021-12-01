@@ -1,16 +1,16 @@
 #pragma once
 #include "Compte.h"
 #include "CompteEpargne.h"
-#include "Mad.h"
+#include "Devise.h"
 namespace Banque {
     class CompteCourant :
         public Compte
     {
     private:
-        Mad* mtFix;
+        Devise* decouvert;
     public:
-        CompteCourant(Client* c, Mad* s, Mad* mtFix);
-        bool verserEpargne(CompteEpargne&c);
-        bool debiter(Mad& M) override;
+        CompteCourant(Client* c, Devise* s, Devise* d);
+       // bool verserEpargne(CompteEpargne&c);
+        virtual bool debiter(Devise& M) override;
     };
 }

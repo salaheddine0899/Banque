@@ -8,5 +8,6 @@ namespace Banque {
 		GC(int);
 		void inc();
 		int dec();
+		bool isEmpty();
 	};
 }

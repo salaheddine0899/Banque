@@ -2,9 +2,10 @@
 #include <iostream>
 using namespace std;
 #include "Client.h"
-#include "Mad.h"
+#include "Devise.h"
 #include "GC.h"
-#include "Operation.h"
+#include "Depot.h"
+#include "Retrait.h"
 namespace Banque {
 	class Compte
 	{
@@ -15,18 +16,20 @@ namespace Banque {
 		
 		GC* comptRef;
 	protected:
-		Mad* Solde;
-		static Mad* Plafond;
-		list<Operation>* lop;
+		Devise* Solde;
+		static Devise* Plafond;
+		list<Operation*>* lop;
 	public:
-		Compte(Client*, Mad*);
-		Compte(const Compte &);
-		void crediter(Mad& M);
-		virtual bool debiter(Mad& M)=0;
-		bool verser(Mad& M, Compte& C);
+		Compte(Client*, Devise*);
+		Compte(const Compte &)=delete;
+
+		void crediter(Devise& M);
+		virtual bool debiter(Devise& M)=0;
+		bool verser(Devise& M, Compte& C);
 		void consulter() const;
 		void afficherOp()const;
-		Compte&  operator=(const Compte&);
+		Compte&  operator=(const Compte&)=delete;
+		//void incrementer_client();
 		~Compte();
 	};
 

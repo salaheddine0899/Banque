@@ -1,22 +1,27 @@
 #include "Operation.h"
+#include"Compte.h"
 namespace Banque {
 	int Operation::nbop = 0;
-	Operation::Operation(bool t,Mad *mt):numop(++nbop)
+	Operation::Operation(Devise *mt,Compte*c):numop(++nbop)
 	{
 		this->date = __DATE__;
 		this->heure = __TIME__;
-		this->typeOp = t;
 		this->montant = mt;
+		this->c = c;
 	}
-	void Operation::display() const
+	void Operation::displayOp() const
 	{
 
 		cout << "     DATE          HEURE" << endl;
 		cout << "  " << this->date << "      " << this->heure << endl;
 		cout << "Transaction: " << this->numop << endl;
-		cout << "Nature: ";
-		if (this->typeOp) cout << "crediter" << endl;
-		else cout << "retrait" << endl;
+		
+		/*if (this->typeOp) cout << "crediter" << endl;
+		else cout << "retrait" << endl;*/
+		
+	}
+	void Operation::displayFund() const
+	{
 		cout << "Montant: ";
 		this->montant->afficher();
 		cout << endl;

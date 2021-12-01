@@ -2,32 +2,24 @@
 
 namespace Banque {
 	int Compte::nbCompte = 0;
-	Mad* Compte::Plafond = new Mad(25000);
-	Compte::Compte(Client* titulaire, Mad* Solde) :numCompte(++Compte::nbCompte)
+	Devise* Compte::Plafond = new Devise(25000);
+	Compte::Compte(Client* titulaire, Devise* Solde) :numCompte(++Compte::nbCompte)
 	{
-		this->lop = new list<Operation>();
+		this->lop = new list<Operation*>();
 		this->Proprietaire = titulaire;
+		this->Proprietaire->ajouter_compte(*this);
 		this->Solde = Solde;
 		this->comptRef = new GC(1);
 
 	}
 
-	Compte::Compte(const Compte& c):numCompte(++nbCompte)
-	{
-		this->Proprietaire = c.Proprietaire;
-		this->Solde = c.Solde;
-		this->comptRef = c.comptRef;
-		this->comptRef->inc();
-
-	}
-
-	void Compte::crediter(Mad& M) {
+	void Compte::crediter(Devise& M) {
 		//Operation* op = new Operation(true);
 		*(this->Solde) = *(this->Solde) + M;
-		this->lop->push_back(*(new Operation(true,&M)));
+		this->lop->push_back(new Depot(&M,this));
 	}
 
-	bool Compte::verser(Mad& M, Compte& C)
+	bool Compte::verser(Devise& M, Compte& C)
 	{
 		if (this->debiter(M)) {
 			C.crediter(M);
@@ -44,33 +36,25 @@ namespace Banque {
 	void Compte::afficherOp() const
 	{
 		for (auto i : *this->lop)
-			i.display();
+			i->display();
 	}
-	Compte& Compte::operator=(const Compte&c)
+	/*void Compte::incrementer_client()
 	{
-		if (this != &c) {
-			if (this->Proprietaire && this->comptRef && (!this->comptRef->dec())) {
-				delete this->comptRef;
-				this->comptRef = NULL;
-			}
-			this->Solde = c.Solde;
-			this->Proprietaire = c.Proprietaire;
-			this->comptRef = c.comptRef;
-			this->comptRef->inc();
-		}
-		return *this;
-		// TODO: insert return statement here
-	}
+		this->comptRef->inc();
+	}*/
 	Compte::~Compte()
 	{
-		if ((this->comptRef->dec() != 0) && (this->Proprietaire)) {
+		if ((!this->Proprietaire->supprimer_compte(*this)) && (this->Proprietaire)) {
+			//this->Proprietaire->supprimer_compte(*this);
 			this->Proprietaire = nullptr;
 		}
 		else
 		{
 			delete this->Proprietaire;
 		}
-		this->lop->~list();
+		//this->lop->~list();
+		this->lop->clear();
 		delete this->lop;
+		this->lop = 0;
 	}
 }

@@ -2,13 +2,13 @@
 #include "Compte.h"
 namespace Banque {
     class CompteEpargne :
-        public Compte
+        public virtual Compte
     {
     private:
         double tauxInteret;
     public:
-        CompteEpargne(Client*c,Mad*s,double ti);
-        bool debiter(Mad& M) override;
+        CompteEpargne(Client*c,Devise*s,double ti);
+        bool debiter(Devise& M) override;
         void updateSold();
 
     };

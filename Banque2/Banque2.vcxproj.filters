@@ -24,9 +24,6 @@
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mad.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -39,15 +36,27 @@
     <ClCompile Include="Operation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Devise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Retrait.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Depot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComptePayant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompteEpargnePay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Compte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GC.h">
@@ -60,6 +69,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Devise.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Retrait.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Depot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComptePayant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompteEpargnePay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

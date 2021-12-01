@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -144,18 +144,26 @@
     <ClCompile Include="Compte.cpp" />
     <ClCompile Include="CompteCourant.cpp" />
     <ClCompile Include="CompteEpargne.cpp" />
+    <ClCompile Include="CompteEpargnePay.cpp" />
+    <ClCompile Include="ComptePayant.cpp" />
+    <ClCompile Include="Depot.cpp" />
     <ClCompile Include="GC.cpp" />
-    <ClCompile Include="Mad.cpp" />
+    <ClCompile Include="Devise.cpp" />
     <ClCompile Include="Operation.cpp" />
+    <ClCompile Include="Retrait.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="Compte.h" />
     <ClInclude Include="CompteCourant.h" />
     <ClInclude Include="CompteEpargne.h" />
+    <ClInclude Include="CompteEpargnePay.h" />
+    <ClInclude Include="ComptePayant.h" />
+    <ClInclude Include="Depot.h" />
     <ClInclude Include="GC.h" />
-    <ClInclude Include="Mad.h" />
+    <ClInclude Include="Devise.h" />
     <ClInclude Include="Operation.h" />
+    <ClInclude Include="Retrait.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

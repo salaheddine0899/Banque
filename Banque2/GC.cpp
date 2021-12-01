@@ -14,3 +14,8 @@ int Banque::GC::dec()
 {
 	return --this->compt;
 }
+
+bool Banque::GC::isEmpty()
+{
+	return this->compt==0;
+}

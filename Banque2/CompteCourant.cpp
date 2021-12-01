@@ -1,23 +1,23 @@
 #include "CompteCourant.h"
 
 namespace Banque {
-    Banque::CompteCourant::CompteCourant(Client* c, Mad* s, Mad* mtFix) :Compte(c, s)
+    Banque::CompteCourant::CompteCourant(Client* c, Devise* s, Devise* d) :Compte(c, s)
     {
-        this->mtFix = mtFix;
+        this->decouvert = d;
     }
-    bool CompteCourant::debiter(Mad& M)
+    bool CompteCourant::debiter(Devise& M)
     {
-        if ((*(this->Solde) >= M) && (*(this->Solde) <= *Compte::Plafond)) {
+        if (((*this->Solde-M) >=*decouvert ) && (*(this->Solde) <= *Compte::Plafond)) {
 
             *(this->Solde) = *(this->Solde) - M;
-            this->lop->push_back(*(new Operation(false, &M)));
+            this->lop->push_back(new Retrait(&M,this));
             return true;
         }
         return false;
     }
 
-    bool Banque::CompteCourant::verserEpargne(CompteEpargne& c)
+    /*bool Banque::CompteCourant::verserEpargne(CompteEpargne& c)
     {
         return this->verser(*this->mtFix, c);
-    }
+    }*/
 }
