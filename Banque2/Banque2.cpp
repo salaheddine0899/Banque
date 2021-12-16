@@ -2,6 +2,9 @@
 //
 
 #include "CompteEpargne.h"
+#include "Dolar.h"
+#include "Mad.h"
+#include "Euro.h"
 
 using namespace Banque;
 
@@ -10,15 +13,16 @@ int main(){
 
     Client* cl1 = new Client("ABID", "Salah Eddine", "Everywhere");
     Client* cl2 = new Client("ABID", "Aomar", "Everywhere");
-    Devise* s1 = new Devise(20000);
-    //s1->afficher();
+
+    Devise* s1 = new Mad(2000);
+    
   CompteEpargne cpt1(cl1, s1,2);
-   // cpt1.consulter();
-   Devise* s2 = new Devise(15000);
+    cpt1.consulter();
+   Devise* s2 = new Mad(15000);
    CompteEpargne cpt2(cl2, s2, 2);
    CompteEpargne cpt3(cl2, s2,2);
-   Devise* s3 = new Devise(1500);
-   Devise* s4 = new Devise(1500);
+   Devise* s3 = new Mad(1500);
+   Devise* s4 = new Mad(1500);
    cpt1.crediter(*s3);
    cpt2.debiter(*s4);
    cpt1.verser(*s3, cpt2);
@@ -31,11 +35,11 @@ int main(){
     cpt2.consulter();
 
     cl2->afficher_compte();
-    /*cl1->ajouter_compte(cpt1);*/
-    /*cl1->ajouter_compte(cpt1);
+    cl1->ajouter_compte(cpt1);
+    cl1->ajouter_compte(cpt1);
     cl1->ajouter_compte(cpt2);
 
-    cl1->afficher_compte();*/
+    cl1->afficher_compte();
 
     //Compte cpt4(cpt1);
 

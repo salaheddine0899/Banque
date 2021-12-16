@@ -2,7 +2,7 @@
 #include "Compte.h"
 namespace Banque {
     class CompteEpargne :
-        public virtual Compte
+        public Compte
     {
     private:
         double tauxInteret;

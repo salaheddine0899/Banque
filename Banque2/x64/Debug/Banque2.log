@@ -1,5 +1,6 @@
-﻿  CompteEpargne.cpp
-  Depot.cpp
-  Retrait.cpp
+﻿  Banque2.cpp
+  CompteCourant.cpp
+  CompteEpargne.cpp
+  ComptePayant.cpp
   Generating Code...
   Banque2.vcxproj -> C:\Users\a\Documents\poo\Banque2\x64\Debug\Banque2.exe

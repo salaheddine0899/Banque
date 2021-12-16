@@ -144,11 +144,13 @@
     <ClCompile Include="Compte.cpp" />
     <ClCompile Include="CompteCourant.cpp" />
     <ClCompile Include="CompteEpargne.cpp" />
-    <ClCompile Include="CompteEpargnePay.cpp" />
     <ClCompile Include="ComptePayant.cpp" />
     <ClCompile Include="Depot.cpp" />
+    <ClCompile Include="Dolar.cpp" />
+    <ClCompile Include="Euro.cpp" />
     <ClCompile Include="GC.cpp" />
     <ClCompile Include="Devise.cpp" />
+    <ClCompile Include="Mad.cpp" />
     <ClCompile Include="Operation.cpp" />
     <ClCompile Include="Retrait.cpp" />
   </ItemGroup>
@@ -157,11 +159,13 @@
     <ClInclude Include="Compte.h" />
     <ClInclude Include="CompteCourant.h" />
     <ClInclude Include="CompteEpargne.h" />
-    <ClInclude Include="CompteEpargnePay.h" />
     <ClInclude Include="ComptePayant.h" />
     <ClInclude Include="Depot.h" />
+    <ClInclude Include="Dolar.h" />
+    <ClInclude Include="Euro.h" />
     <ClInclude Include="GC.h" />
     <ClInclude Include="Devise.h" />
+    <ClInclude Include="Mad.h" />
     <ClInclude Include="Operation.h" />
     <ClInclude Include="Retrait.h" />
   </ItemGroup>

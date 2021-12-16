@@ -2,7 +2,7 @@
 #include "CompteCourant.h"
 namespace Banque {
     class ComptePayant :
-        public virtual CompteCourant
+        public CompteCourant
     {
     public:
         ComptePayant(Client* c, Devise* s, Devise* d);

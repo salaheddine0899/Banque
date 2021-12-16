@@ -48,7 +48,13 @@
     <ClCompile Include="ComptePayant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CompteEpargnePay.cpp">
+    <ClCompile Include="Mad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Euro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dolar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +89,13 @@
     <ClInclude Include="ComptePayant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CompteEpargnePay.h">
+    <ClInclude Include="Mad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Euro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dolar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

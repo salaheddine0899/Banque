@@ -1,4 +1,7 @@
 #include "Devise.h"
+#include "Euro.h"
+#include "Mad.h"
+#include "Dolar.h"
 namespace Banque {
 	Devise::Devise(double val)
 	{
@@ -7,7 +10,7 @@ namespace Banque {
 
 	void Devise::afficher() const
 	{
-		cout << "le solde est:" << this->val << " MAD." << endl;
+		cout << "le solde est:" << this->val<< endl;
 	}
 
 	Devise& Devise::operator+(const Devise& M)
@@ -39,5 +42,23 @@ namespace Banque {
 		Devise *res=new Devise(this->val*val);
 		return *res;
 
+	}
+	Devise& Devise::operator*(const Devise&M)
+	{
+		// TODO: insert return statement here
+		Devise* res = new Devise(this->val + M.val);
+		return *res;
+	}
+	Mad* Devise::convertToMad()
+	{
+		return nullptr;
+	}
+	Euro* Devise::convertToEuro()
+	{
+		return nullptr;
+	}
+	Dolar* Devise::convertToDolar()
+	{
+		return nullptr;
 	}
 }
